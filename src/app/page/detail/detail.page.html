@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-title>Detail</ion-title>
+
+
+    <ion-buttons slot="end">
+
+      <ion-button fill="clear">
+        <ion-icon name="notifications"></ion-icon>
+        <ion-badge>{{count}}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <div *ngIf="cartList.length> 0">
+
+    <div *ngFor="let cart of cartList">
+
+      {{cart.name}} {{cart.colour}} {{cart.age}}
+
+
+      <ion-button  fill="fill" (click)="delete(cart)"> <ion-icon name="trash" ></ion-icon></ion-button>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+</ion-content>

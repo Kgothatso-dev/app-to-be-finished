@@ -1,27 +1,111 @@
-#container {
-  text-align: center;
+ion-header {
+  ion-toolbar,
+  ion-item {
+    --background: #f1f5f8;
+    padding: 0 10px;
+    background: #f1f5f8;
+  }
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  ion-toolber {
+    .bordered {
+      --border-radius: 10px;
+      --box-shadow: 5px 5px 10px #d1d1d1, -5px -5px 10px #ffffff;
+    }
+  }
+
+  ion-item {
+    h3 {
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    ion-avatar {
+      --border-radius: 40%;
+    }
+  }
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+ion-content {
+  --background: linear-gradient(
+    90deg,
+    rgba(43, 90, 148, 1) 0%,
+    rgba(45, 121, 229, 1) 35%,
+    rgba(45, 112, 229, 1) 100%
+  );
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+  .slides {
+    background: url("https://static.onecms.io/wp-content/uploads/sites/9/2020/03/19/fideos-secos-tacos-FT-RECIPE0420-1.jpg")
+      no-repeat center center / cover;
+    padding: 4px 10px 20px 10px;
+    border-radius: 0 0 28px 28px;
+  }
 
-  color: #8c8c8c;
+  ion-card {
+    width: 85%;
+    
+     border-radius: 20px;
+     padding: 0;
+     
+     
+    .main {
+      width: 60px;
+      height: 60px;
+       border-radius: 50px;
+      background: #ffffff;
+      box-shadow: 7px 7px 20px #dbdfe2, -7px -7px 20px #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  margin: 0;
-}
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
 
-#container a {
-  text-decoration: none;
+    .files {
+      padding-top: 14px;
+    }
+  }
+
+  .container {
+    padding: 6px 20px;
+    color: #ffffff;
+
+    ion-item {
+      --background: rgba(255, 255, 255, 0.1);
+      padding: 0;
+      margin: 14px 0;
+      --border-radius: 14px;
+      color: #ffffff;
+      font-weight: 600;
+
+      ion-label {
+        padding: 6px 0;
+
+        h4 {
+          font-weight: 600;
+          font-size: 16px;
+          color: rgba(0, 0, 0, 0.66);
+          text-align: center;
+        }
+
+        h6 {
+          color: rgba(0, 0, 0, 0.66);
+          text-align: center;
+          font-weight: 600;
+          font-size: 16px;
+        }
+      }
+    }
+
+    h2 {
+      padding-bottom: 8px;
+    }
+  }
 }

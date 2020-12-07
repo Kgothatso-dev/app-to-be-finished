@@ -31,82 +31,74 @@ ion-header {
 }
 
 ion-content {
-  --background: linear-gradient(
-    90deg,
-    rgba(43, 90, 148, 1) 0%,
-    rgba(45, 121, 229, 1) 35%,
-    rgba(45, 112, 229, 1) 100%
-  );
+  --background: #f8f8fa;
+}
 
-  .slides {
-    background: url("data:image/jpeg;base64,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")
-      no-repeat center center / cover;
-    // background: #f1f5f8;
-    padding: 4px 10px 20px 10px;
-    border-radius: 0 0 28px 28px;
+ion-searchbar {
+  --box-shadow: none;
+  --border-radius: 12px;
+}
+
+.more {
+  font-size: 12px;
+  color: #FB4E4E;
+}
+
+.title {
+  font-size: 16px;
+}
+
+.card {
+  margin: 0;
+  margin-right: 50px;
+  width: 80%;
+  box-shadow: none;
+  border-radius: 14px;
+}
+
+
+.category {
+  width: 100%;
+  box-shadow: none;
+  border-radius: 14px;
+}
+
+
+ion-card-content {
+  .img-wrapper {
+    border-radius: 14px;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 8px;
   }
 
-  ion-card {
-    width: 85%;
-    
-     border-radius: 20px;
-     padding: 0;
-     
-     
-    .main {
-      width: 60px;
-      height: 60px;
-       border-radius: 50px;
-      background: #ffffff;
-      box-shadow: 7px 7px 20px #dbdfe2, -7px -7px 20px #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    .files {
-      padding-top: 14px;
-    }
+  ion-icon {
+    color: #f2994a;
+    padding-right: 4px;
   }
 
-  .container {
-    padding: 6px 20px;
-    color: #ffffff;
-
-    ion-item {
-      --background: rgba(255, 255, 255, 0.1);
-      padding: 0;
-      margin: 14px 0;
-      --border-radius: 14px;
-      color: #ffffff;
-      font-weight: 600;
-
-      ion-label {
-        padding: 6px 0;
-
-        h4 {
-          font-weight: 600;
-          font-size: 16px;
-          color: rgba(0, 0, 0, 0.66);
-          text-align: center;
-        }
-
-        h6 {
-          color: rgba(0, 0, 0, 0.66);
-          text-align: center;
-          font-weight: 600;
-          font-size: 16px;
-        }
-      }
-    }
-
-    h2 {
-      padding-bottom: 8px;
-    }
+  ion-card-subtitle:last-of-type {
+    padding-top:6px;
   }
+
+}
+
+ion-card-header {
+  ion-icon {
+    font-size: 60px;
+  }
+
+  ion-card-title {
+    font-size: 22px;
+    font-weight: bolder;
+  }
+}
+
+.wrapper {
+  padding-bottom: 0;
+}
+
+ion-badge {
+  padding: 10px;
+  font-size: 14px;
 }

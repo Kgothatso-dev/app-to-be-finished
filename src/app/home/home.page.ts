@@ -29,4 +29,9 @@ export class HomePage {
 
   }
 
+  goToCart(){
+    this.router.navigate(['cart']);
+  }
+
+
 }

@@ -1,0 +1,75 @@
+.empty {
+  text-align: center;
+}
+
+.buttonpad {
+  margin-top: 15px;
+}
+
+.labelQuality {
+  text-align: center;
+  font-weight: lighter;
+  color: rgb(235, 235, 235);
+  margin-left: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+a:hover {
+  color: rgb(10, 110, 24);
+}
+
+.row {
+  height: 80px;
+}
+
+img {
+  width: 100%;
+}
+
+h2 {
+  font-weight: bolder;
+  color: rgb(0, 0, 0);
+}
+
+.subprice {
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+  font-family: "courier";
+  font-size: medium;
+}
+
+.delelteprice {
+  color: rgb(196, 1, 1);
+  font-weight: bolder;
+  font-family: "courier";
+  font-size: medium;
+}
+
+.totalprice {
+  color: rgb(10, 110, 24);
+  font-weight: bolder;
+  font-family: "courier";
+  font-size: medium;
+}
+
+.quantity {
+  font-weight: bolder;
+  font-family: "courier";
+  padding: 5px;
+}
+
+.checkOut {
+  padding-top: 10px;
+}
+
+ion-content {
+  --background: #f8f8fa;
+}
+
+.secondary {
+  color: rgb(196, 1, 1);
+}

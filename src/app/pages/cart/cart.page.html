@@ -1,0 +1,94 @@
+<ion-header class="ion-no-border">
+  <ion-item lines="none">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons [hidden]="totalItems == 0" slot="end">
+      <ion-button (click)="clearCart()">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="totalItems > 0; else empty">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Total Amount Due</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="8">
+              <h2>Sub Total: </h2>
+            </ion-col>
+            <ion-col size="4">
+              <ion-label class="subprice">{{totalAmount | currency}}</ion-label>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="8">
+              <h2>Charge on Deliveries: </h2>
+            </ion-col>
+            <ion-col size="4">
+              <ion-label class="deleteprice">{{totalAmount | currency}}</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="8">
+              <h2>Total: </h2>
+            </ion-col>
+
+            <ion-col size="4">
+              <ion-label class="totalprice"> {{totalAmount | currency}}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-grid>
+      <ion-row class="row ion-padding-bottom" *ngFor="let item of cart">
+        <ion-col size="3">
+          <ion-avatar>
+            <img src="{{item.image}}">
+          </ion-avatar>
+        </ion-col>
+
+        <ion-col size="6">
+          <ion-text>
+            <a routerLink="/product-detail/{{item.id}}"><h6><b>{{item.name}}</b></h6></a>
+          </ion-text>
+          <ion-label class="labelQuality">
+            Qty: {{item.quantity}}
+          </ion-label>
+        </ion-col>
+
+        <ion-col size="3">
+          <ion-buttons class="buttonpad">
+            <ion-button (click)="deleteItem(item.id)">
+              <ion-icon title="Remove Item to Cart" color="danger" name="bag-remove-outline"></ion-icon>
+            </ion-button>
+
+            <ion-button (click)="addToCart(item)">
+              <ion-icon title="Add Item to Cart" color="success" name="bag-add-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+
+      <ion-button (click)="goToLogin()" class="checkOut" expand="block" color="danger">
+        CheckOut
+      </ion-button>
+    </ion-grid>
+  </div>
+
+  <ng-template #empty>
+    <img src="" />
+    <h1 class="h2 empty">Cart is Empty</h1>
+    <p class="par empty">Add food</p>
+  </ng-template>
+</ion-content>

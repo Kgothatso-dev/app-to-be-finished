@@ -5,8 +5,9 @@
     </ion-buttons>
 
     <ion-buttons slot="end">
-      <ion-button calss="bordered" fill="solid" color="light">
-        <ion-icon name="cart"></ion-icon>
+      <ion-button calss="bordered" fill="solid" color="light" (click)="goToCart()">
+        <ion-icon name="cart" slot="icon-only"></ion-icon>
+        
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -154,10 +155,7 @@
                 </ion-card-content>
               </ion-card>
             </ion-slide>
-  
-  
-            
-  
+
             <ion-slide>
               <ion-card class="card">
                 <ion-card-content class="ion-text-left">
@@ -183,7 +181,6 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-  
   
     <div class="ion-padding-horizontal wrapper">
     
@@ -248,17 +245,7 @@
                   </ion-card-header>
                 </ion-card>
               </ion-slide>
-  
-              <ion-slide>
-                <ion-card class="category" color="secondary">
-                  <ion-card-header class="ion-text-center">
-                    <ion-icon src="assets/noodle.svg"></ion-icon>
-                    <ion-card-title>Noodle</ion-card-title>
-                    <ion-card-subtitle>Something here</ion-card-subtitle>
-                  </ion-card-header>
-                </ion-card>
-              </ion-slide>           
-          
+                    
             </ion-slides>
           </ion-col>
         </ion-row>

@@ -12,10 +12,11 @@ import { MenuPage } from './pages/menu/menu.page';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
+import { TabsPage } from './pages/tabs/tabs.page';
 
 
 @NgModule({
-  declarations: [AppComponent, MenuPage],
+  declarations: [AppComponent, MenuPage, TabsPage],
   entryComponents: [],
   imports: [BrowserModule, 
     IonicModule.forRoot(), 

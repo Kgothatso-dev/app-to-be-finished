@@ -9,7 +9,7 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'dashboard',
+        path: 'home',
         loadChildren: () => import('../../home/home.module').then(m => m. HomePageModule)
       },
       {

@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Product } from 'src/app/files/interface';
+import { IProduct } from 'src/app/files/interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService implements Product {
+export class ProductService{
 
-  private products: Product[] = [
+  private products: IProduct[] = [
      
       {
           id: '',
@@ -77,17 +77,17 @@ export class ProductService implements Product {
   category: string;
   image: string;
 
-  getProducts(): Observable<Product[]>{
+  getProducts(): Observable<IProduct[]>{
       return of(this.products);
   }
 
-  getProduct(id: string): Observable<Product>{
+  getProduct(id: string): Observable<IProduct>{
       return of(this.products.find(product => {
           return product.id == id;
       }));
   }
 
-  getProductsByCategoryId(categoryId: string): Observable<Product[]>{
+  getProductsByCategoryId(categoryId: string): Observable<IProduct[]>{
       return of(this.products.filter(product => {
           return product.category == categoryId;
       }));

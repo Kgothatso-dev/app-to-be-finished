@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { Cart, Product } from 'src/app/files/interface';
+import { ICart, IProduct } from 'src/app/files/interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  cart: Cart[] = [];
+  cart: ICart[] = [];
   totalItems = new BehaviorSubject<number>(0);
   amountDue = new BehaviorSubject<number>(0.0);
 
@@ -19,7 +19,7 @@ export class CartService {
     this.setTotalItems();
   }
 
-  findItem(id: string): Observable<Cart> {
+  findItem(id: string): Observable<ICart> {
 
     return of(this.cart.find(item => {
       return item.id == id;
@@ -44,7 +44,7 @@ export class CartService {
 
   }
 
-  getCartItems(): Observable<Cart[]> {
+  getCartItems(): Observable<ICart[]> {
     return of(this.cart);
   }
 
@@ -61,9 +61,9 @@ export class CartService {
     return this.amountDue;
   }
 
-  addToCart(product: Product) {
+  addToCart(product: IProduct) {
 
-    let item: Cart;
+    let item: ICart;
 
     this.findItem(product.id).subscribe(cartItem => {
       item = cartItem;
@@ -95,7 +95,7 @@ export class CartService {
 
   deleteItem(id: string): void {
     let index;
-    let cartItem: Cart;
+    let cartItem: ICart;
 
     this.findItem(id).subscribe(item => {
       cartItem = item;

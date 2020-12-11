@@ -1,4 +1,4 @@
-export interface Product{
+export interface IProduct{
     id: string;
     name: string;
     description: string;
@@ -7,14 +7,14 @@ export interface Product{
     image: string;
 }
 
-export interface Category{
+export interface ICategory{
     id: string;
     name: string;
     description: string;
     image: string;
 }
 
-export interface Cart{
+export interface ICart{
     id: string;
     name: string;
     description: string;
@@ -24,13 +24,13 @@ export interface Cart{
 }
 
 
-export interface Popular{
+export interface IPopular{
     id: string;
-    product: Product;
+    product: IProduct;
 }
 
 
-export interface User{
+export interface IUser{
     id: string;
     name: string;
     email: string;

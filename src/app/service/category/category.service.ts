@@ -1,53 +1,48 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Category } from 'src/app/files/interface';
+import { ICategory } from 'src/app/files/interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryService implements Category{
+export class CategoryService{
 
-  catogories: Category[] = [
+  categories: ICategory[] = [
       {
-          id : 'category0001',
+          id : 'cat1',
           name : 'Burger',
-          description : 'Burgers category description',
-          image: '../../../assets/categories/burgers/burger-category.png'
+          description : 'Burgers ',
+          image: '../../../assets/cat/burgers/barbecued burger.jpg'
       },
       {
-          id : 'category0002',
+          id : 'cat2',
           name : 'Pizza',
-          description : 'Pizza category description',
-          image: '../../../assets/categories/pizza/pizza-category.jpg'
+          description : 'Pizza ',
+          image: '../../../assets/cat/pizza/chicken mayo.jpg'
       },
+   
       {
-          id : '  ',
-          name : 'Desert',
-          description : 'Desert category description',
-          image: '../../../assets/categories/desert/desert-category.jpg'
-      },
-      {
-          id : 'category0004',
-          name : 'Food',
-          description : 'Food category description',
-          image: ///food-category.jpg'
+          id : 'cat3',
+          name : 'Drinks',
+          description : 'Drinks',
+          image: '../../../assets/cat/drinks/drinks.jpg'
       }
   ];
 
   constructor() {
-      super();
+      
   }
   id: string;
   name: string;
   description: string;
   image: string;
 
-  getCategories(): Observable<Category[]>{
-      return of(this.catogories);
+  getCategories(): Observable<ICategory[]>{
+      return of(this.categories);
   }
 
-  getCategory(id: string): Observable<Category>{
-      return of(this.catogories.find(category => {
+  getCategory(id: string): Observable<ICategory>{
+      return of(this.categories.find(category => {
           return category.id == id;
       }));
   }

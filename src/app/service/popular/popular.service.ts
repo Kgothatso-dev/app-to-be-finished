@@ -1,87 +1,64 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Popular } from 'src/app/files/cls';
-import { Product } from 'src/app/files/interface';
+import { IPopular, IProduct } from 'src/app/files/interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PopularService extends Popular{
+export class PopularService {
 
-  popular: Popular[] = [
+  popular: IPopular[] = [
     {
-        id: '',
+        id: 'pop1',
         product: {
-            id: '',
-            name: ' ',
-            description: '  ',
-            price: 1,
-            category: '',
-            image: ''
+            id: 'burger1',
+            name: 'big mac ',
+            description: ' big mac ',
+            price: 85,
+            category: 'burgers',
+            image: '../../../assets/cat/burgers/big mac.jpg'
+        }
+    },
+    {
+        id: 'pop2',
+        product: {
+            id: 'pizza1',
+            name: 'chicken mayo',
+            description: 'chicken mayo',
+            price: 65,
+            category: 'pizza',
+            image: '../../../assets/cat/pizza/chicken mayo.jpg'
         },
     },
     {
-        id: '',
+        id: 'pop3',
         product: {
-            id: '',
-            name: '',
-            description: '   ',
-            price: 2,
-            category: '',
-            image: ''
+            id: 'drinks1',
+            name: 'drinks ',
+            description: ' drinks ',
+            price: 20,
+            category: 'drinks',
+            image: '../../../assets/cat/drinks/drinks.jpg'
         },
     },
-    {
-        id: '',
-        product: {
-            id: '',
-            name: ' ',
-            description: '  ',
-            price: 3,
-            category: '',
-            image: ''
-        },
-    },
-    {
-        id: '',
-        product: {
-            id: '',
-            name: '  ',
-            description: '   ',
-            price: 4,
-            category: '',
-            image: ''
-        },
-    },
-    {
-        id: '',
-        product: {
-            id: '',
-            name: ' ',
-            description: '  ',
-            price: 5,
-            category: '',
-            image: ''
-        },
-    }
+      
 ];
 
 constructor() {
-  super();
 }
 
-setPopular(product: Product){
+setPopular(product: IProduct){
     this.popular.push({
-        id: '6',
+        id: '3',
         product
     });
 }
 
-getPopular(): Observable<Popular[]>{
+getPopular(): Observable<IPopular[]>{
     return of(this.popular);
 }
 
-getPopularById(id: string): Observable<Popular>{
+getPopularById(id: string): Observable<IPopular>{
     return of(
         this.popular.find(popular => {
             return popular.id == id;

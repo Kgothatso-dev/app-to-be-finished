@@ -53,7 +53,11 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+  },  {
+    path: 'category',
+    loadChildren: () => import('./pages/category/category/category.module').then( m => m.CategoryPageModule)
   },
+
 
 
 ];

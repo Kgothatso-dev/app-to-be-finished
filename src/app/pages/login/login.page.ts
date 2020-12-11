@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavController } from '@ionic/angular';
-
+import { AuthenticatinService } from 'src/app/service/authentication/authenticatin.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,7 @@ export class LoginPage implements OnInit {
 
   constructor(
     private navCtrl: NavController,
-    private authService: AuthenticateService,
+    private authService: AuthenticatinService,
     private formBuilder: FormBuilder
   ) { }
 

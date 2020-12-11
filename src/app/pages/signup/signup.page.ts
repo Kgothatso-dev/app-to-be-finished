@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { NavController } from '@ionic/angular';
-import { AuthenticateService } from '../service/authentication/authentication.service';
+import { AuthenticatinService } from 'src/app/service/authentication/authenticatin.service';
+
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +17,7 @@ export class SignupPage implements OnInit {
   constructor(
 
     private navCtrl: NavController,
-    private authService: AuthenticateService,
+    private authService: AuthenticatinService,
     private formBuilder: FormBuilder
 
   ) { }

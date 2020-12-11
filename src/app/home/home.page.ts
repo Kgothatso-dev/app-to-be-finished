@@ -9,10 +9,10 @@ import { Router } from '@angular/router';
 
 
 export class HomePage {
-  slidesOptions = {
+  options = {
     slidesPerView: 1.5,
-    spaceBetween: 10,
-    centeredSlides: false,
+    spaceBetween: 1,
+    centeredSlides: true,
     loop: true
   }
   

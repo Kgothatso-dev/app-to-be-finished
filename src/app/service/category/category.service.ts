@@ -12,20 +12,20 @@ export class CategoryService{
           id : 'cat1',
           name : 'Burger',
           description : 'Burgers ',
-          image: '../../../assets/cat/burgers/barbecued burger.jpg'
+          image: '../../assets/cat/burgers/barbecued burger.jpg'
       },
       {
           id : 'cat2',
           name : 'Pizza',
           description : 'Pizza ',
-          image: '../../../assets/cat/pizza/chicken mayo.jpg'
+          image: '../../assets/cat/pizza/chicken mayo.jpg'
       },
    
       {
           id : 'cat3',
           name : 'Drinks',
           description : 'Drinks',
-          image: '../../../assets/cat/drinks/drinks.jpg'
+          image: '../../assets/cat/drinks/drinks.jpg'
       }
   ];
 

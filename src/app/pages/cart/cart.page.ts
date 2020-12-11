@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { Cart, Product } from 'src/app/files/interface';
+import { ICart, IProduct } from 'src/app/files/interface';
 import { CartService } from 'src/app/service/cart/cart.service';
 import { CategoryService } from 'src/app/service/category/category.service';
 import { PopularService } from 'src/app/service/popular/popular.service';
@@ -16,7 +16,7 @@ import { ProductService } from 'src/app/service/product/product.service';
 })
 export class CartPage implements OnInit {
 
-  cart: Cart[];
+  cart: ICart[];
   totalItems: number;
   totalAmount = 0.0;
 
@@ -44,7 +44,7 @@ export class CartPage implements OnInit {
     this.cartService.deleteItem(id);
   }
 
-  addToCart(product: Product) {
+  addToCart(product: IProduct) {
     this.cartService.addToCart(product);
   }
 

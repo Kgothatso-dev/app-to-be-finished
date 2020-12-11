@@ -41,11 +41,6 @@ export class ProductService{
           category: '',
           image: ''
       },
-
-    
-
-      
-
       {
           id: '',
           name: '  ',
@@ -62,6 +57,30 @@ export class ProductService{
           category: '',
           image: ''
       },
+      {
+        id: '',
+        name: '  ',
+        description: '   ',
+        price: 9,
+        category: '',
+        image: ''
+    },
+    {
+        id: '',
+        name: '  ',
+        description: '   ',
+        price: 9,
+        category: '',
+        image: ''
+    },
+    {
+        id: '',
+        name: '  ',
+        description: '   ',
+        price: 9,
+        category: '',
+        image: ''
+    },
      
      
   ];

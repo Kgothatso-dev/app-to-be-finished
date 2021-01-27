@@ -1,7 +1,11 @@
 <ion-header class="ion-no-border">
+
   <ion-item lines="none">
+
     <ion-buttons slot="start">
+
       <ion-back-button defaultHref="tabs/home"></ion-back-button>
+
     </ion-buttons>
 
     <ion-buttons [hidden]="totalItems == 0" slot="end">
@@ -9,14 +13,25 @@
         <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
+
+    <ion-label>
+			<h2>Chubby Eat's</h2>
+			<p>chubbyeats.co.za</p>
+		</ion-label>
+
   </ion-item>
 </ion-header>
 
 <ion-content>
+
   <div *ngIf="totalItems > 0; else empty">
+
     <ion-card>
+
       <ion-card-header>
+
         <ion-card-subtitle>Total Amount Due</ion-card-subtitle>
+
       </ion-card-header>
       <ion-card-content>
         <ion-grid>

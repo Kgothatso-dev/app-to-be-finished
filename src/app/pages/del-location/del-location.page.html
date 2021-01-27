@@ -1,0 +1,26 @@
+<ion-header>
+  
+  <ion-item lines="none">
+    <ion-avatar slot="start">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB-eEHzwWZK2bOPYhe622YvrPNdE_XQoBu5g&usqp=CAU" />
+    </ion-avatar>
+    <ion-label>
+      <p>Chubby</p>
+      <h3>EAT'S</h3>
+    </ion-label>
+  </ion-item>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar (ionInput)="search($event)" [value]="selectedAddress"></ion-searchbar>
+
+	<ion-list *ngIf="address.length > 0">
+		<ion-item button *ngFor="let add of address" (click)="onSelect(add)">
+			<ion-icon name="pin"></ion-icon>
+			{{add}}
+		</ion-item>
+	</ion-list>	
+	 
+	<div class="map-section" id='map' style='width: 100%; height: 100%;'></div>
+
+</ion-content>

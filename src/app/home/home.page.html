@@ -1,9 +1,11 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar color="primary">
+  <ion-toolbar color="dark">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-button (click)="openFirst">
+        <ion-icon name="menu" slot="icon-only"></ion-icon>
+      </ion-button>
     </ion-buttons>
-
+  
     <ion-buttons slot="end">
       <ion-button (click)="goToCart()">
         <ion-icon name="cart" slot="icon-only"></ion-icon>
@@ -56,24 +58,19 @@
   <ion-grid class="ion-no-padding">
     <ion-row>
       <ion-col size="12">
-        <ion-slides [options]="options">
-
-          <ion-slide>
-            <ion-card class="card">
-              <ion-card-content class="ion-text-left">
-
-                <div class="img-wrapper">
-                  <ion-img
-                    src="../assets/cat/burgers/barbecued burger.jpg">
-                  </ion-img>
-                </div>
-
-                <ion-card-title class="title">Barbecued Burger</ion-card-title>
-                <ion-card-subtitle>sum</ion-card-subtitle>
-                <ion-button size="small" shape="round" fill="clear" href="#">Add to Cart</ion-button>
+				<ion-slides [options]="options">
+					<ion-slide *ngFor="let popular of popular_dishes">
+						<ion-card class="card">
+						<ion-card-content class="ion-text-left">
+							<div class="img-wrapper">
+								<a routerLink="/product-details/{{popular.id}}">
+									<ion-img src="{{popular.image}}"></ion-img>
+								</a>
+							</div>
               </ion-card-content>
             </ion-card>
           </ion-slide>
+          
 
           <ion-slide>
             <ion-card class="card">

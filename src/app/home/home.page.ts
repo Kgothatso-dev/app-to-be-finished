@@ -23,9 +23,8 @@ export class HomePage {
   }
 
   
-  MenuPage(){
-
-    this.router.navigateByUrl('menu');
+  openFirst(){
+    this.router.navigate(['first']);
 
   }
 

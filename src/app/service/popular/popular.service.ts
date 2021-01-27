@@ -1,69 +1,85 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { IPopular, IProduct } from 'src/app/files/interface';
+import { ICategory,IPopular, IProduct } from 'src/app/files/interface';
+import { ProductService } from 'src/app/service/product/product.service';
+import { CategoryService } from 'src/app/service/category/category.service';
+import { AngularFirestore } from '@angular/fire/firestore';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PopularService {
+	populars: IPopular[] = [];
+	popular_dishes: IProduct[] = [];
+	popular_drinks: IProduct[] = [];
 
-  popular: IPopular[] = [
-    {
-        id: 'pop1',
-        product: {
-            id: 'burger1',
-            name: 'big mac ',
-            description: ' big mac ',
-            price: 85,
-            category: 'burgers',
-            image: '../../../assets/cat/burgers/big mac.jpg'
-        }
-    },
-    {
-        id: 'pop2',
-        product: {
-            id: 'pizza1',
-            name: 'chicken mayo',
-            description: 'chicken mayo',
-            price: 65,
-            category: 'pizza',
-            image: '../../../assets/cat/pizza/chicken mayo.jpg'
-        },
-    },
-    {
-        id: 'pop3',
-        product: {
-            id: 'drinks1',
-            name: 'drinks ',
-            description: ' drinks ',
-            price: 20,
-            category: 'drinks',
-            image: '../../../assets/cat/drinks/drinks.jpg'
-        },
-    },
-      
-];
+	constructor(
+		private firestore: AngularFirestore,
+		private _productService: ProductService,
+		private _categoryService: CategoryService
+	) { }
 
-constructor() {
-}
+	// Get popular dishes
+	getPopularDishes(): Observable<IProduct[]>{
+		return of(this.popular_dishes);
+	}
 
-setPopular(product: IProduct){
-    this.popular.push({
-        id: '3',
-        product
-    });
-}
+	// Get popular drinks
+	getPopularDrinks(): Observable<IProduct[]>{
+		return of(this.popular_drinks);
+	}
 
-getPopular(): Observable<IPopular[]>{
-    return of(this.popular);
-}
+	// Get all populars
+	getPopulars(): Observable<IPopular[]>{
+		return of(this.populars);
+	}
 
-getPopularById(id: string): Observable<IPopular>{
-    return of(
-        this.popular.find(popular => {
-            return popular.id == id;
-    }));
-}
+	// Get popular by id
+	getPopularById(popular_id: string): Observable<IPopular>{
+		return of(
+			this.populars.find(popular => {
+				return popular.id == popular_id;
+			})
+		);
+	}
+	
+	// Set populars
+	setPopulars(){
+		let popular: IPopular;
+		let product: IProduct;
+		let category: ICategory;
+		this.populars = [];
+		this.popular_dishes = [];
+		this.popular_drinks = [];
+		this.firestore.collection('Populars').snapshotChanges().subscribe(firebase_response => {
+			firebase_response.forEach(response => {
+				popular = response.payload.doc.data() as IPopular;
+				this.populars.push(popular);
+				product = this._productService.getProductById(popular.product_id);
+				category = this._categoryService.getCategoryById(product.category_id);
+				this.setPopularTypes(product, category);
+			});
+		})
+	}
+	
+	// Set popular types
+	setPopularTypes(product: IProduct, category: ICategory){
+		if(category.name == 'Drinks'){
+			this.setPopularDrink(product);
+		}
+		else{
+			this.setPopularDish(product);
+		}
+	}
 
-  
+	// Set popular 'Dishes'
+	setPopularDish(product: IProduct){
+		this.popular_dishes.push(product);
+	}
+
+	// Set popular 'Drinks'
+	setPopularDrink(product: IProduct){
+		this.popular_drinks.push(product);
+	}
 }

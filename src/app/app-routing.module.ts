@@ -59,7 +59,27 @@ const routes: Routes = [
   {
     path: 'cart',
     loadChildren: () => import('./pages/cart/cart.module').then(m => m.CartPageModule)
+  },  {
+    path: 'confirmorder',
+    loadChildren: () => import('./page/confirmorder/confirmorder.module').then( m => m.ConfirmorderPageModule)
   },
+  {
+    path: 'confirmorder',
+    loadChildren: () => import('./pages/confirmorder/confirmorder.module').then( m => m.ConfirmorderPageModule)
+  },
+  {
+    path: 'del-location',
+    loadChildren: () => import('./pages/del-location/del-location.module').then( m => m.DelLocationPageModule)
+  },
+  {
+    path: 'favorite',
+    loadChildren: () => import('./pages/favorite/favorite.module').then( m => m.FavoritePageModule)
+  },
+  {
+    path: 'orders',
+    loadChildren: () => import('./pages/orders/orders.module').then( m => m.OrdersPageModule)
+  },
+
 
 ];
 

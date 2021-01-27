@@ -5,7 +5,10 @@ ion-header {
       padding: 0 10px;
       background: #f1f5f8;
     }
-  
+    .price{
+        color: red;
+        
+    }
     ion-toolber {
       .bordered {
         --border-radius: 10px;
@@ -29,11 +32,32 @@ ion-header {
         --border-radius: 40%;
       }
     }
-  }
-  ion-content {
+}
+
+ion-content {
 	--background: #f8f8fa;
 }
 
-.wrapper {
-	padding-bottom: 0;
+ion-searchbar {
+	--box-shadow: none;
+	--border-radius: 12px;
 }
+
+.card {
+	margin: 0px 10px 10px 10px;
+	margin-right: 50px;
+	width: 95%;
+	box-shadow: none;
+	border-radius: 14px;
+}
+
+ion-card-content {
+	.img-wrapper {
+		width: 100%;
+		border-radius: 14px;
+		height: 250px;
+		overflow: hidden;
+		margin-bottom: 6px;
+	}
+}
+  
